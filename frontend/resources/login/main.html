@@ -1,0 +1,30 @@
+<br>
+<br>
+<br>
+<form method="post" action="./actions/login.php">
+    <div class="col-lg-4 col-md-6 col-sm-10  container shadow-lg justify-content-center d-flex">
+        <div class="w-75 justify-content-center py-4 d-flex">
+            <div class="w-100">
+                <div class="justify-content-center py-2 d-flex col-12">
+                    <h1 class="bi bi-person-circle"></h1>
+                </div>
+                <input class="form-control my-3 py-2 text-dark" name="email" placeholder="email académique (uca)"
+                    type="email" required>
+                <input class="form-control my-3 py-2 text-dark" name="password" placeholder="mot de passe"
+                    type="password" required>
+                <div class="row mt-3">
+                    <div class="col d-flex justify-content-between">
+                        <p class="btn btn-primary check">Se connecter</p>
+                        <a href="../recovery/">
+                            <p class="btn btn-secondary text-light">mot de passe oublier ?</p>
+                        </a>
+                        <button type="submit" class="d-none"></button>
+                    </div>
+                    <hr class="my-2">
+                    <p>tu n'as pas de compte ?</p>
+                    <a href="../signup/" class="btn btn-primary">Créer un compte</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

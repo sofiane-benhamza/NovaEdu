@@ -1,0 +1,48 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../frontend/lib/wow/wow.min.js"></script>
+<script src="../../frontend/lib/easing/easing.min.js"></script>
+<script src="../../frontend/lib/waypoints/waypoints.min.js"></script>
+<script src="../../frontend/lib/owlcarousel/owl.carousel.min.js"></script>
+<script>
+   const fileInput = $('input[name="file"]');
+   var fileSelected;
+   $('p.recover').click(function () {
+      // Select the element to be removed
+      var elementToRemove = document.querySelector('.bg-danger');
+      // Remove the element
+      if (elementToRemove) {
+         elementToRemove.remove();
+      }
+      $('.spinner-border').removeClass('invisible');
+      // Check if any file is selected
+      if (fileInput.prop('files').length > 0) {
+         fileSelected = true;
+      } else {
+         fileSelected = false;
+      }
+      //mail is ok
+      if ($('input[name=email]').val().endsWith("@uca.ma") && $('input[name=email]').val().length > 10) {
+         mailOk = true;
+      } else {
+         mailOk = false;
+      }
+      setTimeout(function () {
+         if (mailOk && fileSelected) {
+            setTimeout(function () {
+               $('button[type="submit"]').trigger('click');
+            }, 2000);
+         } else {
+            // Create a new element
+            var newElement = document.createElement('div');
+            newElement.innerHTML = "<div class='bg-danger'><h5 class='text-white text-center p-3'>veuillez vérifier les données</h5></div>";
+            // Add the new element as the first child of the body
+            document.body.prepend(newElement);
+            $('.spinner-border').addClass('invisible');
+         }
+      }, 2000);
+   });
+</script>
+<script src="../../frontend/js/main.js"></script>
+</body>
+</html>

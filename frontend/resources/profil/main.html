@@ -1,0 +1,90 @@
+<div class="modal fade" id="tutorialModal" tabindex="-1" role="dialog" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="tutorialModalLabel">Bienvenue à NovaEdu</h5>
+       </div>
+       <div class="modal-body">
+         <h6>C'est quoi le fichier .novaedu ?</h6>
+         <p>Ce fichier vous permet de récupérer votre mot de passe en cas où vous l'auriez oublié, ne le jamais partagez avec n'import qui.</p>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-primary tuto-button" data-dismiss="modal">J'ai compris</button>
+       </div>
+     </div>
+   </div>
+ </div>
+<br>
+<form method="post" action="./actions/modify_user.php">
+    <div class="col-lg-4 col-md-6 col-sm-10 container shadow-lg justify-content-center d-flex">
+        <div class="w-75 justify-content-center py-2 d-flex">
+            <div class="w-100">
+                <div class="justify-content-center py-1 d-flex col-12">
+                    <h1 class="bi bi-person-circle"></h1>
+                </div>
+                <div class="form-group">
+                    <div class="input-group align-items-center">
+                        <input class="form-control my-3 text-dark" id="fname" name="fname" type="text" readonly>
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="editFname">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group align-items-center">
+                        <input class="form-control my-3 text-dark" id="lname" name="lname" type="text" readonly>
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="editLname">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group align-items-center">
+                        <input id="psOld" class="form-control my-1 text-dark" placeholder="mot de passe actuel"
+                            name="psOld" type="password" readonly>
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="editPs">
+                                <i class="fas fa-pencil-alt"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group d-none">
+                    <div class="input-group align-items-center">
+                        <input id="psNew" class="form-control my-1 text-dark" placeholder="nouveau mot de passe"
+                            name="psNew" type="password">
+                    </div>
+                </div>
+                <div class="form-group d-none">
+                    <div class="input-group align-items-center">
+                        <input id="psConf" class="form-control my-1 text-dark" placeholder="confirmation mot de passe"
+                            type="password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="btn btn-primary w-100 py-3 my-3">Enregistrer</p>
+                        <button class="d-none" type="submit"></button>
+                    </div>
+                </div>
+                <hr class="bg-primary w-100" style="height:3px;">
+                    <a href="<?php echo $link?>" class="btn btn-secondary w-100 py-1 my-1 font-sm" download>Télécharger votre fichier de récupération</a>
+            </div>
+        </div>
+    </div>
+</form>
+<script>
+$(document).ready(function() {
+  $('#tutorialModal').modal('show');
+});
+  $(document).ready(function() {
+        $('.tuto-button').click(function() {
+          $('#tutorialModal').modal('hide');
+        });
+        $('#tutorialModal').modal('show');
+      });
+</script>

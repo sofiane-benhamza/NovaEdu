@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+
+  database:
+    image: novaedu_db:latest
+    network_mode: "host"
+    restart: unless-stopped
+            
+  application:
+    image: novaedu_app:latest
+    network_mode: "host"
+    restart: unless-stopped
+    depends_on:
+      - database
+      
+      
+      
+ 

@@ -1,0 +1,59 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../frontend/lib/wow/wow.min.js"></script>
+<script src="../../frontend/lib/easing/easing.min.js"></script>
+<script src="../../frontend/lib/waypoints/waypoints.min.js"></script>
+<script src="../../frontend/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../../frontend/js/main.js"></script>
+<script src="../../frontend/js/jquery.js"></script>
+<script>
+    let ps = '**************';
+    $('#fname').val(fname);
+    $('#lname').val(lname);
+    $('#psOld').val(ps);
+    $('#editFname').click(function () {
+        $('#fname').prop('readonly', false);
+    });
+    $('p.btn').click(function () {
+        let autorised = false;
+        if ($('#fname').val() != fname || $('#lname').val() != lname) {
+            //change names
+            autorised = true;
+        } else if ($('#psOld').val() != ps) {
+            //change password
+            if ($('#psOld').val().length < 8) {
+                alert('vérifier votre mot de passe !');
+            } else if ($('#psNew').val().length < 8) {
+                alert('le longueur minimal est 8 caractéres');
+            } else if ($('#psNew').val() != $('#psConf').val()) {
+                alert('veuillez vérifiez le nouveau mot de passe');
+            } else {
+                autorised = true;
+            }
+        }
+        if (autorised) {
+            $('body > form > div > div > div > div.row > div > button').trigger('click');
+        }
+    });
+    $('#editLname').click(function () {
+        $('#lname').prop('readonly', false);
+    });
+    $('#editPs').click(function () {
+        var psNewContainer = $('#psNew').parent().parent();
+        var psConfContainer = $('#psConf').parent().parent();
+        if (psNewContainer.hasClass('d-none')) {
+            $('#psOld').val('');
+            $('#psOld').prop('readonly', false);
+            psNewContainer.removeClass('d-none');
+            psConfContainer.removeClass('d-none');
+        } else {
+            $('#psOld').val('**************');
+            $('#psOld').prop('readonly', true);
+            psNewContainer.addClass('d-none');
+            psConfContainer.addClass('d-none');
+        }
+    });
+</script>
+</body>
+
+</html>
