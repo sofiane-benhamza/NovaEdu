@@ -304,7 +304,7 @@ jamais partagez avec n'import qui.</p>
 <div class=row>
 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
 &copy; <a class=border-bottom href=#>NovaEdu</a>, All Right Reserved.
-Designed By <a class=border-bottom href=https://htmlcodex.com>NovaEdu équipe</a>
+Designed By <a class=border-bottom href=#>NovaEdu équipe</a>
 </div>
 </div>
 </div>

@@ -14,7 +14,7 @@ if ($lastSlashPos !== false && ( substr($url, $lastSlashPos + 1) === 'index.php'
   $trimmedPath = str_replace('/index.php', '', $_SERVER['REQUEST_URI']);
   header('Location: ' . $trimmedPath . '?error=invalid_url');
 }
-include './comps/head.html';
+include './comps/head.php';
 $conn = new mysqli("127.0.0.1", "root", "", "novaedu");
 if ($conn->connect_error) {
   echo "connection failed";
@@ -69,5 +69,5 @@ if ($posts->num_rows > 0) {
 </div>
 </div>";
 }
-include './comps/end.html';
+include './comps/end.php';
 ?>
